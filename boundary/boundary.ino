@@ -43,7 +43,7 @@ void MoveForward(int dist, int motspeed)
 }
  
 // Function to Move in Reverse
-void MoveReverse(int dist, int mspeed) 
+void MoveReverse(int dist, int motspeed) 
 {  
   // Set Motor A reverse
   digitalWrite(IN1, LOW);
