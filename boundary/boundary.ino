@@ -44,14 +44,14 @@ void loop() {
   unsigned long randomDirection = millis(); //timer for setting random turn direction
   unsigned int uS = sonar.ping();           //check distance
   
-if(randomDirection-r1 > r2 && ranturn==0){  //check to see if the corect time has passed
-  ranturn = ranturn+1;                      //if time has passed and ranturn ==0 then set ranturn to 1
-  r1 = randomDirection;
-}
-else if(randomDirection-r1 > r2 && ranturn==1){
-  ranturn = ranturn-1; //if ranturn is == to 1 set it to 0
-  r1 = randomDirection;
-}
+  if(randomDirection-r1 > r2 && ranturn==0){  //check to see if the corect time has passed
+    ranturn = ranturn+1;                      //if time has passed and ranturn ==0 then set ranturn to 1
+    r1 = randomDirection;
+  }
+  else if(randomDirection-r1 > r2 && ranturn==1){
+    ranturn = ranturn-1; //if ranturn is == to 1 set it to 0
+    r1 = randomDirection;
+  }
   //Serial.print(ranturn); 
 
   if (uS  >= 3000) //if every thing is clear go forward
