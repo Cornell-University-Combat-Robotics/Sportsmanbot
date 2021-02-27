@@ -32,11 +32,19 @@ void setup() {
   pinMode(ENB, OUTPUT);
   
   Serial.begin(9600);
+<<<<<<< HEAD
 
 }
 
 void loop() {
 
+=======
+
+}
+
+void loop() {
+
+>>>>>>> bbc49920122a96d8311aca96d2e2c2a38becab30
   //int IR_front = analogRead(IR_sensor_front);
   //int IR_back = analogRead(IR_sensor_back);
   
@@ -44,6 +52,7 @@ void loop() {
   unsigned long randomDirection = millis(); //timer for setting random turn direction
   unsigned int uS = sonar.ping();           //check distance
   
+<<<<<<< HEAD
   if(randomDirection-r1 > r2 && ranturn==0){  //check to see if the corect time has passed
     ranturn = ranturn+1;                      //if time has passed and ranturn ==0 then set ranturn to 1
     r1 = randomDirection;
@@ -52,6 +61,16 @@ void loop() {
     ranturn = ranturn-1; //if ranturn is == to 1 set it to 0
     r1 = randomDirection;
   }
+=======
+if(randomDirection-r1 > r2 && ranturn==0){  //check to see if the corect time has passed
+  ranturn = ranturn+1;                      //if time has passed and ranturn ==0 then set ranturn to 1
+  r1 = randomDirection;
+}
+else if(randomDirection-r1 > r2 && ranturn==1){
+  ranturn = ranturn-1; //if ranturn is == to 1 set it to 0
+  r1 = randomDirection;
+}
+>>>>>>> bbc49920122a96d8311aca96d2e2c2a38becab30
   //Serial.print(ranturn); 
 
   if (uS  >= 3000) //if every thing is clear go forward
