@@ -1,11 +1,20 @@
-#ifndef WEAPON_DEF
-#define WEAPON_DEF
-#include<NewPing.h>
+
+//TODO: Comment out when uploading to arduino
+#define TESTING_ENV
+
+#ifdef TESTING_ENV
+#include "include/NewPing.h"
+#else
+#include <NewPing.h>
+#endif
+
 enum weaponState {isReady, isAttacking, isPrepping};
 
 struct weapCBlock {
     weaponState currentState;
-    NewPing sonar = NewPing(10, 10, 10);
+    #ifndef TESTING_ENV
+        NewPing sonar = NewPing(10, 10, 10);
+    #endif
     int trigger;
     int echo;
     int enable;
@@ -23,6 +32,8 @@ struct weapCBlock {
 */
 void weapInit(struct weapCBlock* weap, NewPing s, int t, int e, int en, int c1, int c2, int min = 10, int max = 20);
 
+//constructor without NewPing
+void weapInit(struct weapCBlock* weap, int t, int e, int en, int c1, int c2, int min = 10, int max = 20);
 /*
     Determines based on the US sensor whether or not to attack.
     Uses the minDis and maxDis as the range for the strike distance.
@@ -30,4 +41,3 @@ void weapInit(struct weapCBlock* weap, NewPing s, int t, int e, int en, int c1, 
 */
 void weaponHandler(struct weapCBlock* w);
 
-#endif

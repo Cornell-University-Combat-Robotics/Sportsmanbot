@@ -40,7 +40,7 @@ void setup() {
   pinMode(WEAPON_C2, OUTPUT); 
   weapInit(&wcb, sonar, TRIGGER_PIN, ECHO_PIN, WEAPON_E, WEAPON_C1, WEAPON_C2);
   Serial.begin(9600);
-
+  Serial.println("Setup Done");
 }
 
 
@@ -48,6 +48,8 @@ void loop() {
 
   //int IR_front = analogRead(IR_sensor_front);
   //int IR_back = analogRead(IR_sensor_back);
+  Serial.println("func1");
+  delay(200);
   weaponHandler(&wcb); 
   Serial.println("func1");
   delay(200);

@@ -48,7 +48,7 @@ void weaponHandler(struct weapCBlock* w){
                 digitalWrite(w->enable, HIGH);
                 w->motorActive = true;
             }
-            //sets motor to rotate, otehrwise keeps rotating
+            //sets motor to rotate, otherwise keeps rotating
         }
         else{
             digitalWrite(w->enable, LOW);
