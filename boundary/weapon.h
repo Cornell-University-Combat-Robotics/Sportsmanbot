@@ -40,4 +40,3 @@ void weapInit(struct weapCBlock* weap, int t, int e, int en, int c1, int c2, int
     If not ready to attack, prime the weapon.
 */
 void weaponHandler(struct weapCBlock* w);
-
