@@ -1,10 +1,10 @@
 enum moveState
 {
   still,
-  forward,
-  backward,
-  left,
-  right
+  mforward,
+  mbackward,
+  mleft,
+  mright
 };
 
 struct movement
@@ -27,61 +27,46 @@ struct movement
 /*
  * Initializes robot's movement state and corresponding pins for the left+right motors
  */
-void moveInit(struct movement *m, int len, int lca, int lcb, int ren, int rca, int rcb)
+void moveInit(struct movement* m, int len, int lca, int lcb, int ren, int rca, int rcb)
 {
 }
 
 /*
- * Sets up the right motor
- * @param mode defines whether motor is off (0), moves
- * forward (1) or backward (2)
- * @param percent is the speed of the motor from 0-100%
+ * Moves robot forward at speed movespeed and updates
+ * movement state
  */
-void rm(int mode, int percent)
+void forward(struct movement* m, int movespeed)
 {
 }
 
 /*
- * Sets up the left motor
- * @param mode defines whether motor is off (0), moves
- * forward (1) or backward (2)
- * @param percent is the speed of the motor from 0-100%
+ * Moves robot backward at speed movespeed and updates
+ * movement state
  */
-void lm(int mode, int percent)
+void backward(struct movement* m, int movespeed)
 {
 }
 
 /*
- * Moves robot forward at speed movespeed
+ * Turns robot left at speed movespeed and updates
+ * movement state
  */
-void forward(int movespeed)
+void left(struct movement* m, int movespeed)
 {
 }
 
 /*
- * Moves robot backward at speed movespeed
+ * Turns robot right at speed movespeed and updates
+ * movement state
  */
-void backward(int movespeed)
+void right(struct movement* m, int movespeed)
 {
 }
 
 /*
- * Turns robot left at speed movespeed
+ * Stops movement of the robot and updates
+ * movement state
  */
-void left(int movespeed)
-{
-}
-
-/*
- * Turns robot right at speed movespeed
- */
-void right(int movespeed)
-{
-}
-
-/*
- * Stops movement of the robot
- */
-void stay()
+void stay(struct movement* m)
 {
 }
