@@ -57,7 +57,7 @@ void lm(int mode, int percent)
 //end of void lm
 
 
-void forword (int movespeed) //used to move robot forword. movespeed sets the speed.
+void forward (int movespeed) //used to move robot forword. movespeed sets the speed.
 {
   rm(1,movespeed);
   lm(1,movespeed);
